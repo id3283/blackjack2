@@ -1,5 +1,3 @@
-package blackjack;
-
 public class Card {
     private String suit;
     private String value;
@@ -34,11 +32,26 @@ public class Card {
     public int getPointValue() {
 // only return the value if the card is face up
         if (isFaceUp) {
+            try{
+                int intValue = Integer.parseInt(this.value);
+                return intValue;
+            }
+            catch (NumberFormatException nfe) {
+                // oh, well
+            }
+
+            switch (this.value) {
+                case "J", "Q", "K":
+                    return 10;
+                case "A":
+                    return 11;
+                default:
+                    throw new IllegalArgumentException("That's not a card, dummy.");
+            }
 // determine point value and return it
 // A = 11
 // K, Q, J = 10
 // all numeric cards are equal to their face value
-            return 0;
         } else {
             return 0;
         }

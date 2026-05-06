@@ -1,5 +1,3 @@
-package blackjack;
-
 import java.util.ArrayList;
 
 public class Hand {
@@ -7,8 +5,11 @@ public class Hand {
     public Hand(){
         cards = new ArrayList<>();
     }
+
+
     // A Card is dealt to the Hand and the Hand is responsible
 // to store the card
+
     public void deal(Card card){
         cards.add(card);
     }
