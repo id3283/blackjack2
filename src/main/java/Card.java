@@ -6,11 +6,10 @@ public class Card {
     public Card(String suit, String value) {
         this.suit = suit;
         this.value = value;
-        this.isFaceUp = false;
     }
 
     public String getSuit() {
-// only return the suit if the card is face up
+        // only return the suit if the card is face up
         if (isFaceUp) {
             return suit;
         } else {
@@ -19,10 +18,10 @@ public class Card {
     }
 
     public String getValue() {
-// only return the value if the card is face up
+        // only return the value if the card is face up
         if (isFaceUp) {
-// this is the string value of the card
-// i.e. A, K, Q, J, 10, 9 ...
+            // this is the string value of the card
+            // i.e. A, K, Q, J, 10, 9 ...
             return value;
         } else {
             return "#";
@@ -30,7 +29,7 @@ public class Card {
     }
 
     public int getPointValue() {
-// only return the value if the card is face up
+        // only return the value if the card is face up
         if (isFaceUp) {
             try{
                 int intValue = Integer.parseInt(this.value);
@@ -48,10 +47,10 @@ public class Card {
                 default:
                     throw new IllegalArgumentException("That's not a card, dummy.");
             }
-// determine point value and return it
-// A = 11
-// K, Q, J = 10
-// all numeric cards are equal to their face value
+        // determine point value and return it
+        // A = 11
+        // K, Q, J = 10
+        // all numeric cards are equal to their face value
         } else {
             return 0;
         }

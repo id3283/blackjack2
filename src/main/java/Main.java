@@ -8,12 +8,6 @@ public class Main {
         Deck deck = new Deck();
         deck.shuffle();
 
-        Hand marbinsHand  = new Hand();
-
-        Card card = deck.deal();
-        marbinsHand.deal(card);
-
-
 
 //
 //
